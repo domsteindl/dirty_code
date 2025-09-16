@@ -8,88 +8,51 @@ class DirtyScreenOne extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Dirty Screen #1"),
       ),
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         child: Column(
           children: [
-            Container(
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: Colors.redAccent),
-              margin: const EdgeInsets.all(4),
-              padding: const EdgeInsets.all(16.0),
-              child: const Row(
-                children: [
-                  Icon(Icons.bug_report),
-                  SizedBox(
-                    width: 8,
-                  ),
-                  Text(
-                    'Box #1',
-                    style: TextStyle(fontSize: 20, color: Colors.white),
-                  )
-                ],
-              ),
+            MyOwnWIdget1(
+              textContent: "Box 1",
             ),
-            Container(
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: Colors.redAccent),
-              margin: const EdgeInsets.all(4),
-              padding: const EdgeInsets.all(16.0),
-              child: const Row(
-                children: [
-                  Icon(Icons.bug_report),
-                  SizedBox(
-                    width: 8,
-                  ),
-                  Text(
-                    'Box #2',
-                    style: TextStyle(fontSize: 20, color: Colors.white),
-                  )
-                ],
-              ),
+            MyOwnWIdget1(
+              textContent: "Box 2",
             ),
-            Container(
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: Colors.redAccent),
-              margin: const EdgeInsets.all(4),
-              padding: const EdgeInsets.all(16.0),
-              child: const Row(
-                children: [
-                  Icon(Icons.bug_report),
-                  SizedBox(
-                    width: 8,
-                  ),
-                  Text(
-                    'Box #3',
-                    style: TextStyle(fontSize: 20, color: Colors.white),
-                  )
-                ],
-              ),
+            MyOwnWIdget1(
+              textContent: "Box 3",
             ),
-            Container(
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: Colors.redAccent),
-              margin: const EdgeInsets.all(4),
-              padding: const EdgeInsets.all(16.0),
-              child: const Row(
-                children: [
-                  Icon(Icons.bug_report),
-                  SizedBox(
-                    width: 8,
-                  ),
-                  Text(
-                    'Box #4',
-                    style: TextStyle(fontSize: 20, color: Colors.white),
-                  )
-                ],
-              ),
+            MyOwnWIdget1(
+              textContent: "Box 4",
             )
           ],
         ),
+      ),
+    );
+  }
+}
+
+class MyOwnWIdget1 extends StatelessWidget {
+  final String textContent;
+  const MyOwnWIdget1({super.key, required this.textContent});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12), color: Colors.redAccent),
+      margin: const EdgeInsets.all(4),
+      padding: const EdgeInsets.all(16.0),
+      child: Row(
+        children: [
+          const Icon(Icons.bug_report),
+          const SizedBox(
+            width: 8,
+          ),
+          Text(
+            textContent,
+            style: const TextStyle(fontSize: 20, color: Colors.white),
+          )
+        ],
       ),
     );
   }
